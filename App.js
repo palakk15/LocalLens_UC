@@ -1,12 +1,13 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { AppProvider } from "./UserContext";
+import { AppProvider } from "../UserContext";
 import { Ionicons } from '@expo/vector-icons';
-import ProfileScreen from "./screens/ProfileScreen";
-import EditProfileScreen from "./screens/EditProfileScreen";
-import FavouritesScreen from "./screens/FavouritesScreen";
-import HomeScreen from "./screens/HomeScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import EditProfileScreen from "../screens/EditProfileScreen";
+import FavouritesScreen from "../screens/FavouritesScreen";
+import HomeScreen from "../screens/HomeScreen";
+import ChatBotScreen from "../screens/ChatBotScreen";
 
 const Tab=createBottomTabNavigator();
 
@@ -29,7 +30,10 @@ export default function App()
                 iconName = focused ? "heart" : "heart-outline";
               } else if (route.name === "Edit Profile") {
                 iconName = focused ? "create" : "create-outline";
+              } else if (route.name === "Chatbot") {
+                 iconName = focused ? "chatbubble" : "chatbubble-outline";
               }
+
 
               return <Ionicons name={iconName} size={size} color={focused ? "#e0245e" : "gray"} />;
             },
@@ -42,6 +46,7 @@ export default function App()
           <Tab.Screen name="Profile" component={ProfileScreen}/>
           <Tab.Screen name="Edit Profile" component={EditProfileScreen}/>
           <Tab.Screen name="Favourites" component={FavouritesScreen}/>
+          <Tab.Screen name="ChatBot" component={ChatBotScreen}/>
         </Tab.Navigator>
       </NavigationContainer>
     </AppProvider>
