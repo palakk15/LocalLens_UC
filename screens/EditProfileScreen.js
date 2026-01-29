@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { View, TextInput, Button, Image, StyleSheet } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import { AppContext } from "./UserContext";
+import { AppContext } from "../UserContext";
 
 export default function EditProfileScreen({ navigation }) 
 {

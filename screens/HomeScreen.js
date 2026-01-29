@@ -10,7 +10,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import axios from "axios";
-import { AppContext } from "./UserContext";
+import { AppContext } from "../UserContext";
 import { Ionicons } from '@expo/vector-icons';
 
 const API_URL = "https://68ce624a6dc3f350777ed8ae.mockapi.io/api/events";
@@ -75,7 +75,7 @@ if(loading){
     return (
         <View style={styles.container}>
             <ActivityIndicator size="large"/>
-            <Text style={{ marginTop: 8 , justifyContent: center}}>Loading events...</Text>
+            <Text style={{ marginTop: 8 , justifyContent:"center"}}>Loading events...</Text>
         </View>
 
     );

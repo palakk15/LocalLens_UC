@@ -8,11 +8,11 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import { AppContext } from "./UserContext";
+import { AppContext } from "../UserContext";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function FavouritesScreen() {
-    const{favourites,removeFavourites} = useContext(AppContext);
+    const{favourites,removeFavourite} = useContext(AppContext);
     if(!favourites || favourites.length==0){
         return(
             <View style={styles.container}>
@@ -28,7 +28,7 @@ const renderItem = ({item})=>(
             <Text style={styles.meta}>
                 {item.date}.{item.location}
             </Text>
-            <TouchableOpacity onPress={()=> removeFavourites(item.id)}>
+            <TouchableOpacity onPress={()=> removeFavourite(item.id)}>
                 <Ionicons name="heart-dislike" size={26} color="#e0245e" />
             </TouchableOpacity>
         </View>

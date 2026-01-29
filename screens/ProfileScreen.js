@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
-import { AppContext } from "./UserContext";
+import { AppContext } from "../UserContext";
 
 export default function ProfileScreen({ navigation })
 { 

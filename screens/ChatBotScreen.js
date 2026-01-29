@@ -2,7 +2,9 @@ import React, { useState, useCallback, useEffect } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 import { GoogleGenerativeAI, GoogleGenerativeAIError } from "@google/generative-ai";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { GEMINI_API_KEY } from "@env"; 
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY; 
+import { AppContext } from "../UserContext";
+
 
 export default function ChatBotScreen() {
     const[messages , setMessages]=useState([]);
@@ -53,7 +55,7 @@ export default function ChatBotScreen() {
               messages={messages}
               onSend={(msgs)=>onSend(msgs)}
               user={{ _id: 1 }}
-              placeholder="Ask me anything..."
+              placeholder="Ask me anything.."
               />
         </SafeAreaView>
     );
