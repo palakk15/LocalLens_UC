@@ -1,14 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { View, TextInput, Button, Alert } from "react-native";
 import api from "../api/api";
-import { AppContext } from "../UserContext"
 
-export default function LoginScreen({ navigation }) {
-  const { login } = useContext(AppContext);
+export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginUser = async () => {
+  const registerUser = async () => {
     try {
       await api.post("/register", {
         email,
